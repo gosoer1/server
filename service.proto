@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "./grpc;grpc";
+
+service NumberService {
+    rpc SendNumber (NumberRequest) returns (NumberResponse);
+}
+
+message NumberRequest {
+    int32 number = 1; 
+}
+
+message NumberResponse {
+    int32 result = 1;
+    string message = 2; 
+}
